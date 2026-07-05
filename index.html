@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="toolbar">
+    <div class="toolbar-brand">MD<span>Editor</span></div>
+
+    <div class="toolbar-actions">
+      <input type="file" id="importInput" accept=".md,.markdown,text/markdown" hidden>
+      <button id="btnImport" class="btn">Import .md</button>
+      <button id="btnExportMd" class="btn">Export .md</button>
+      <button id="btnExportHtml" class="btn">Export .html</button>
+      <button id="btnExportPdf" class="btn btn-accent">Export .pdf</button>
+    </div>
+  </header>
+
+  <main class="workspace" id="workspace">
+    <section class="pane pane-editor" id="editorPane">
+      <div class="pane-label">Edição</div>
+      <textarea id="editor" spellcheck="false" placeholder="# Escreva seu markdown aqui..."></textarea>
+    </section>
+
+    <div class="divider" id="divider" role="separator" aria-orientation="vertical"></div>
+
+    <section class="pane pane-preview" id="previewPane">
+      <div class="pane-label">Preview</div>
+      <div id="preview" class="markdown-body"></div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="ui.js"></script>
+  <script src="export.js"></script>
+</body>
+
+</html>
