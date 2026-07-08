@@ -11,7 +11,10 @@
 <body>
 
   <header class="toolbar">
-    <div class="toolbar-brand">MD<span>Editor</span> | github.com/liberstack</div>
+    <div class="toolbar-left">
+      <div class="toolbar-brand">MD<span>Editor</span> | github.com/liberstack</div>
+      <button id="btnSupport" class="btn-support" title="Apoiar o projeto">💰</button>
+    </div>
 
     <div class="toolbar-actions">
       <input type="file" id="importInput" accept=".md,.markdown,text/markdown" hidden>
@@ -36,10 +39,22 @@
     </section>
   </main>
 
+  <div id="supportModal" class="modal-overlay" hidden>
+    <div class="modal">
+      <button id="modalClose" class="modal-close" aria-label="Fechar">&times;</button>
+      <p class="modal-text">💰<br>Gostou do projeto? Considere apoiar via Pix/PicPay ↓</p>
+      <div class="modal-email-row">
+        <code id="pixEmail">brgui86@gmail.com</code>
+        <button id="btnCopyEmail" class="btn btn-accent">Copiar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="ui.js"></script>
   <script src="export.js"></script>
+  <script src="coffee.js"></script>
 </body>
 
 </html>

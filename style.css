@@ -32,6 +32,12 @@ body {
   height: 52px;
 }
 
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .toolbar-brand {
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -39,6 +45,27 @@ body {
 
 .toolbar-brand span {
   color: var(--accent);
+}
+
+.btn-support {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-support:hover {
+  background: #2f313c;
+  border-color: var(--accent);
 }
 
 .toolbar-actions {
@@ -183,6 +210,71 @@ body {
 .markdown-body td {
   border: 1px solid #ddd;
   padding: 6px 10px;
+}
+
+/* Modal de apoio */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 24px;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--text);
+}
+
+.modal-text {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.modal-email-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-email-row code {
+  flex: 1;
+  background: var(--code-bg);
+  color: var(--text);
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 @media (max-width: 760px) {
